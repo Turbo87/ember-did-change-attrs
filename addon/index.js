@@ -1,4 +1,3 @@
-import WeakMap from 'ember-weakmap';
 import Ember from 'ember';
 
 function isEqual(key, a, b) {
@@ -24,7 +23,7 @@ export default Ember.Mixin.create({
         initialValues[key] = this.get(key);
       }
 
-      weakMap = new WeakMap();
+      weakMap = new Ember.WeakMap();
       weakMap.set(this, initialValues);
       this.set('_didChangeAttrsWeakMap', weakMap);
     }
